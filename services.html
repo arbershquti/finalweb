@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - West London Build</title>
+    <link rel="stylesheet" href="./services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header id="hero">
+        <div class="logo">
+            <a href="index.html">West London Build</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="services.html" class="active">SERVICES</a></li>
+                <li><a href="index.html">OUR WORK</a></li>
+                <li><a href="about-us.html">ABOUT US</a></li>
+                <li><a href="index.html">AREAS WE OPERATE</a></li>
+                <li><a href="index.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item" data-scroll>
+                    <img src="images/service1.jpg" alt="Service 1">
+                    <h3>House Extensions</h3>
+                    <p>We specialize in creating seamless house extensions that blend with your existing architecture.</p>
+                </div>
+                <div class="service-item" data-scroll>
+                    <img src="images/service2.jpg" alt="Service 2">
+                    <h3>Loft Conversions</h3>
+                    <p>Transform your unused loft space into a beautiful and functional living area.</p>
+                </div>
+                <div class="service-item" data-scroll>
+                    <img src="images/service3.jpg" alt="Service 3">
+                    <h3>Kitchen Renovations</h3>
+                    <p>Modernize your kitchen with our expert design and renovation services.</p>
+                </div>
+                <div class="service-item" data-scroll>
+                    <img src="images/service4.jpg" alt="Service 4">
+                    <h3>Bathroom Remodeling</h3>
+                    <p>Create your dream bathroom with our bespoke remodeling solutions.</p>
+                </div>
+                <div class="service-item" data-scroll>
+                    <img src="images/service5.jpg" alt="Service 5">
+                    <h3>Garden Rooms</h3>
+                    <p>Add extra living space with our custom-designed garden rooms.</p>
+                </div>
+                <div class="service-item" data-scroll>
+                    <img src="images/service6.jpg" alt="Service 6">
+                    <h3>Interior Design</h3>
+                    <p>Complete interior design services to transform your living spaces.</p>
+                </div>
+            </div>
+            <div class="view-work-btn-container">
+                <a href="index.html" class="view-work-btn">
+                    VIEW OUR WORK
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="similar-projects">
+        <div class="container">
+            <h2 class="section-title">Look Similar Projects</h2>
+            <div class="project-filter">
+                <select id="project-filter" class="filter-select">
+                    <option value="all">All Projects</option>
+                    <option value="house-extensions">House Extensions</option>
+                    <option value="loft-conversions">Loft Conversions</option>
+                    <option value="kitchen-renovations">Kitchen Renovations</option>
+                    <option value="bathroom-remodeling">Bathroom Remodeling</option>
+                    <option value="garden-rooms">Garden Rooms</option>
+                    <option value="interior-design">Interior Design</option>
+                </select>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-category="house-extensions">
+                    <img src="images/project1.jpg" alt="House Extension">
+                    <div class="project-info">
+                        <h3>House Extension</h3>
+                        <p>Modern glass extension with garden view</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="loft-conversions">
+                    <img src="images/project2.jpg" alt="Loft Conversion">
+                    <div class="project-info">
+                        <h3>Loft Conversion</h3>
+                        <p>Spacious loft transformation</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="kitchen-renovations">
+                    <img src="images/project3.jpg" alt="Kitchen Renovation">
+                    <div class="project-info">
+                        <h3>Kitchen Renovation</h3>
+                        <p>Contemporary kitchen design</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="bathroom-remodeling">
+                    <img src="images/project4.jpg" alt="Bathroom Remodeling">
+                    <div class="project-info">
+                        <h3>Bathroom Remodeling</h3>
+                        <p>Luxury bathroom renovation</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="garden-rooms">
+                    <img src="images/project5.jpg" alt="Garden Room">
+                    <div class="project-info">
+                        <h3>Garden Room</h3>
+                        <p>Indoor-outdoor living space</p>
+                    </div>
+                </div>
+                <div class="project-item" data-category="interior-design">
+                    <img src="images/project6.jpg" alt="Interior Design">
+                    <div class="project-info">
+                        <h3>Interior Design</h3>
+                        <p>Modern living space transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <a href="index.html" class="footer-logo-link">West London Build</a>
+                </div>
+                <p class="footer-description">Transforming spaces, building dreams. Your trusted partner in bespoke home extensions and renovations.</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i>123 West London Street, London</li>
+                    <li><i class="fas fa-phone"></i>020 1234 5678</li>
+                    <li><i class="fas fa-envelope"></i>info@westlondonbuild.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Follow Us</h4>
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2023 West London Build. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

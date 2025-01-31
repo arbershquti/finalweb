@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West London Build</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="root"></div>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="images/1.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/2.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/3.jpg" alt="Image 3">
+            </div>
+        </div>
+        <div class="timer">5</div>
+    </div>
+    <header id="hero">
+        <div class="logo">
+            <a href="index.html">West London Build</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="index.html">OUR WORK</a></li>
+                <li><a href="about-us.html">ABOUT US</a></li>
+                <li><a href="index.html">AREAS WE OPERATE</a></li>
+                <li><a href="index.html">CONTACT US</a></li>
+            </ul>
+            <div class="search-projects">
+        </div>
+    </nav>
+    </header>
+    <section class="about-us">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-title">
+                    <h2>About</h2>
+                    <h3>West London Build is one of London's leading bespoke design and build companies, with years of experience in providing professional home extensions</h3>
+                </div>
+                <div class="about-text">
+                    <p>At West London Build, we've been transforming spaces and building dreams for over a decade. Our passion for quality construction and attention to detail has made us a trusted name in the industry.</p>
+                    <p>We specialize in delivering bespoke building solutions that combine modern design with traditional craftsmanship. Our team of experienced professionals is dedicated to creating spaces that inspire and endure.</p>
+                    <p>From concept to completion, we work closely with our clients to ensure every project reflects their vision while meeting the highest standards of quality and safety.</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-learn-more">
+            <a href="about-us.html" class="learn-more-btn">
+                LEARN MORE
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <div class="projects-grid">
+                <div class="project-item large">
+                    <img src="images/project1.jpg" alt="House Extension">
+                    <div class="project-info">
+                        <h3>House Extension</h3>
+                        <p>Modern glass extension with garden view</p>
+                    </div>
+                </div>
+                <div class="project-item medium">
+                    <img src="images/project2.jpg" alt="Kitchen Renovation">
+                    <div class="project-info">
+                        <h3>Kitchen Renovation</h3>
+                        <p>Contemporary kitchen design</p>
+                    </div>
+                </div>
+                <div class="project-item small">
+                    <img src="images/project3.jpg" alt="Loft Conversion">
+                    <div class="project-info">
+                        <h3>Loft Conversion</h3>
+                        <p>Spacious loft transformation</p>
+                    </div>
+                </div>
+                <div class="project-item wide">
+                    <img src="images/project4.jpg" alt="Garden Room">
+                    <div class="project-info">
+                        <h3>Garden Room</h3>
+                        <p>Indoor-outdoor living space</p>
+                    </div>
+                </div>
+                <div class="project-item tall">
+                    <img src="images/project5.jpg" alt="Modern Extension">
+                    <div class="project-info">
+                        <h3>Modern Extension</h3>
+                        <p>Contemporary living space</p>
+                    </div>
+                </div>
+                <div class="project-item medium-square">
+                    <img src="images/project6.jpg" alt="Bathroom Design">
+                    <div class="project-info">
+                        <h3>Bathroom Design</h3>
+                        <p>Luxury bathroom renovation</p>
+                    </div>
+                </div>
+                <div class="project-item small-wide">
+                    <img src="images/project7.jpg" alt="Kitchen Extension">
+                    <div class="project-info">
+                        <h3>Kitchen Extension</h3>
+                        <p>Open plan kitchen design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="view-more-container">
+        <a href="/projects" class="view-more-btn">
+            VIEW MORE WORK
+            <span class="arrow">→</span>
+        </a>
+    </div>
+
+    <section class="image-with-text">
+        <div class="image-container">
+            <img src="images/house-extension.jpg" alt="Professional House Extension">
+            <div class="text-overlay">
+                <h2>Professional House Extension</h2>
+                <p>Transform your home with our expert house extension services. From design to construction, we deliver high-quality, bespoke solutions tailored to your need.</p>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Expertise</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Innovation</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-award"></i>
+                        <span>Quality</span>
+                    </div>
+                    <div class="icon-item">
+                        <i class="fas fa-handshake"></i>
+                        <span>Trust</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="image-overlay">
+            <div class="quote-form-container">
+                <h2>Request a free consultation</h2>
+                <form class="quote-form">
+                    <div class="form-group">
+                        <label for="full-name">Full Name*</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" placeholder="Email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="____-___-____" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address*</label>
+                        <input type="text" id="address" name="address" placeholder="Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postcode">Postcode*</label>
+                        <input type="text" id="postcode" name="postcode" placeholder="Postcode" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="source">How did you find us?*</label>
+                        <select id="source" name="source" required>
+                            <option value="">Select an option</option>
+                            <option value="google">Google Search</option>
+                            <option value="social">Social Media</option>
+                            <option value="friend">Friend Recommendation</option>
+                            <option value="ad">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Let us know how we can help you?" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                        <label for="privacy-policy">I agree to the Privacy Policy</label>
+                    </div>
+                    
+                    <div class="recaptcha-notice">
+                        This form is protected by reCAPTCHA and the
+                        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and
+                        <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="london-projects-section">
+        <div class="london-projects-image">
+            <img src="images/london-image.jpg" alt="London Projects">
+        </div>
+        <div class="london-projects-content">
+            <h2 class="london-projects-title">Find Projects in Your Area</h2>
+            <p class="london-projects-subtitle">
+                We cover many London boroughs, use the search below to find out more about our work in your area
+            </p>
+            <select class="london-borough-select">
+                <option value="" disabled selected>Select your borough</option>
+                <option value="Barnet">Barnet</option>
+                <option value="Brent">Brent</option>
+                <option value="Bromley">Bromley</option>
+                <option value="Camden">Camden</option>
+                <option value="Ealing">Ealing</option>
+                <option value="Elmbridge">Elmbridge</option>
+                <option value="Hammersmith & Fulham">Hammersmith & Fulham</option>
+                <option value="Hackney">Hackney</option>
+                <option value="Haringey">Haringey</option>
+                <option value="Hounslow">Hounslow</option>
+                <option value="Islington">Islington</option>
+                <option value="Kingston">Kingston</option>
+                <option value="Lambeth">Lambeth</option>
+                <option value="Lewisham">Lewisham</option>
+                <option value="Merton">Merton</option>
+                <option value="Richmond upon Thames">Richmond upon Thames</option>
+                <option value="Southwark">Southwark</option>
+                <option value="Wandsworth">Wandsworth</option>
+            </select>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <a href="index.html" class="footer-logo-link">West London Build</a>
+                </div>
+                <p class="footer-description">Transforming spaces, building dreams. Your trusted partner in bespoke home extensions and renovations.</p>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i>123 West London Street, London</li>
+                    <li><i class="fas fa-phone"></i>020 1234 5678</li>
+                    <li><i class="fas fa-envelope"></i>info@westlondonbuild.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Follow Us</h4>
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2023 West London Build. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
