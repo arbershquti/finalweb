@@ -104,11 +104,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function toggleMenu() {
-    const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    
-    hamburger.classList.toggle('active');
+    const hamburger = document.querySelector('.hamburger');
     navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active');
 }
 
 // Close menu when clicking outside
