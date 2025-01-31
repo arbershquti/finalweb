@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Extension - West London Build</title>
+    <link rel="stylesheet" href="ourwork.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header id="hero">
+        <div class="logo">
+            <a href="index.html">West London Build</a>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="ourwork.html" class="active">OUR WORK</a></li>
+                <li><a href="about-us.html">ABOUT US</a></li>
+                <li><a href="index.html">AREAS WE OPERATE</a></li>
+                <li><a href="index.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-details">
+        <div class="project-hero">
+            <div class="main-image-container">
+                <img src="images/project1.jpg" alt="House Extension Main Image" class="main-image">
+                <div class="navigation-arrows">
+                    <button class="arrow prev" onclick="prevImage()">&#10094;</button>
+                    <button class="arrow next" onclick="nextImage()">&#10095;</button>
+                </div>
+            </div>
+            <div class="thumbnail-grid">
+                <img src="images/project1-thumb1.jpg" alt="Thumbnail 1" class="thumbnail active">
+                <img src="images/project1-thumb2.jpg" alt="Thumbnail 2" class="thumbnail">
+                <img src="images/project1-thumb3.jpg" alt="Thumbnail 3" class="thumbnail">
+                <img src="images/project1-thumb4.jpg" alt="Thumbnail 4" class="thumbnail">
+                <img src="images/project1-thumb5.jpg" alt="Thumbnail 5" class="thumbnail">
+            </div>
+        </div>
+
+        <div class="project-info">
+            <h1>House Extension</h1>
+            <div class="project-meta">
+                <p><i class="fas fa-map-marker-alt"></i> Location: West London</p>
+                <p><i class="fas fa-calendar-alt"></i> Duration: 3 months</p>
+                <p><i class="fas fa-building"></i> Type: Residential Extension</p>
+            </div>
+
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>This modern glass extension transformed a traditional West London home into a bright, contemporary living space. The project included:</p>
+                <ul>
+                    <li>Design and construction of a 30 sqm glass extension</li>
+                    <li>Integration with existing architecture</li>
+                    <li>Energy-efficient glazing system</li>
+                    <li>Underfloor heating installation</li>
+                    <li>Landscaping of the surrounding garden area</li>
+                </ul>
+            </div>
+
+            <div class="project-features">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-expand"></i>
+                        <h3>Space Optimization</h3>
+                        <p>Maximized living space while maintaining garden area</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-sun"></i>
+                        <h3>Natural Light</h3>
+                        <p>Floor-to-ceiling glass walls for maximum daylight</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Eco-Friendly</h3>
+                        <p>Energy-efficient materials and systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <a href="index.html" class="footer-logo-link">West London Build</a>
+                    <p class="footer-description">Transforming spaces, building dreams. Your trusted partner in bespoke home extensions and renovations.</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="ourwork.html">Our Work</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i>123 West London Street, London</li>
+                    <li><i class="fas fa-phone"></i>020 1234 5678</li>
+                    <li><i class="fas fa-envelope"></i>info@westlondonbuild.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Follow Us</h4>
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2023 West London Build. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const images = [
+            'images/project1.jpg',
+            'images/project1-thumb1.jpg',
+            'images/project1-thumb2.jpg',
+            'images/project1-thumb3.jpg',
+            'images/project1-thumb4.jpg',
+            'images/project1-thumb5.jpg'
+        ];
+
+        let currentIndex = 0;
+        const mainImage = document.querySelector('.main-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        function updateMainImage(index) {
+            mainImage.src = images[index];
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateMainImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateMainImage(currentIndex);
+        }
+
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => updateMainImage(index));
+        });
+
+        // Optional: Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+    </script>
+</body>
+</html> 

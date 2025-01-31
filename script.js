@@ -402,3 +402,77 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Handle project card clicks
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const projectId = card.getAttribute('data-project');
+        window.location.href = `project-detail.html?project=${projectId}`;
+    });
+});
+
+// For project detail page
+if (window.location.pathname.includes('project-detail')) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('project');
+    
+    // Fetch project data based on projectId
+    const project = getProjectData(projectId);
+    
+    if (project) {
+        const mainImage = document.querySelector('.main-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const projectTitle = document.querySelector('.project-title');
+        const projectLocation = document.querySelector('.project-location');
+        const projectDuration = document.querySelector('.project-duration');
+        const projectDescription = document.querySelector('.project-description');
+
+        // Set initial content
+        mainImage.src = project.images[0];
+        projectTitle.textContent = project.title;
+        projectLocation.textContent = project.location;
+        projectDuration.textContent = project.duration;
+        projectDescription.textContent = project.description;
+
+        // Update thumbnails
+        thumbnails.forEach((thumb, index) => {
+            thumb.src = project.images[index];
+            thumb.addEventListener('click', () => {
+                mainImage.src = thumb.src;
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+            });
+        });
+    }
+}
+
+// Example project data (replace with your actual data source)
+function getProjectData(projectId) {
+    const projects = {
+        '1': {
+            title: 'Modern Glass Extension',
+            location: 'Ealing, London',
+            duration: '3 months',
+            description: 'A stunning glass extension that seamlessly blends indoor and outdoor living spaces.',
+            images: [
+                'images/project1.jpg',
+                'images/project1-1.jpg',
+                'images/project1-2.jpg',
+                'images/project1-3.jpg'
+            ]
+        },
+        '2': {
+            title: 'Loft Conversion',
+            location: 'Chiswick, London',
+            duration: '4 months',
+            description: 'A spacious loft conversion creating a beautiful master suite with en-suite bathroom.',
+            images: [
+                'images/project2.jpg',
+                'images/project2-1.jpg',
+                'images/project2-2.jpg',
+                'images/project2-3.jpg'
+            ]
+        }
+    };
+    return projects[projectId];
+}
