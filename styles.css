@@ -135,7 +135,7 @@ nav {
 @media only screen and (max-width: 768px) {
     .carousel-container {
         position: relative;
-        height: 61vh !important;
+        height: 75vh !important;
     }
     
     .carousel {
