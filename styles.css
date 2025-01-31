@@ -1493,3 +1493,20 @@ select option:checked {
         object-fit: cover;
     }
 }
+
+/* Default carousel image size */
+.carousel-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Mobile-specific styles */
+@media only screen and (max-width: 768px) {
+    .carousel-image {
+        max-width: 100%; /* Allow image to take full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+        max-height: 300px; /* Adjust this value as needed */
+    }
+}
