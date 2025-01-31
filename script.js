@@ -1,71 +1,88 @@
-let images = ['images/background.jpg', 'images/1.jpg', 'images/2.jpg'];
+let images = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg'];
 let currentImage = 0;
 let header = document.getElementById('hero');
+let lastChangeTime = Date.now();
 
-function changeImage() {
-    header.style.backgroundImage = `url(${images[currentImage]})`;
-    currentImage = (currentImage + 1) % images.length;
-}
+// Remove or comment out the background image rotation code
+// let backgroundTimeout;
+// function changeImage() {
+//     header.style.backgroundImage = `url(${images[currentImage]})`;
+//     currentImage = (currentImage + 1) % images.length;
+//     backgroundTimeout = setTimeout(changeImage, 5000);
+// }
 
-// Auto-rotate header background every 7 seconds
-setInterval(changeImage, 7000);
+// Remove initialization
+// startBackgroundRotation();
 
-// Manual-rotate on click
-header.onclick = changeImage;
+// Remove manual control
+// header.onclick = () => {
+//     changeImage();
+//     resetBackgroundRotation();
+// };
 
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.carousel-slide');
     const timerElement = document.querySelector('.timer');
-    let currentSlide = 0;
-    let timer = 7;
     const projectNames = ['House Extension Project', 'House Renovation Project', 'Living Room Project'];
+    let currentSlide = 7;
+    let timer = 7;
+    let isTransitioning = false;
 
-    function showSlide() {
-        // Add leaving class to current active slide
-        const activeSlide = document.querySelector('.carousel-slide.active');
-        if (activeSlide) {
-            activeSlide.classList.add('leaving');
-        }
+    function showNextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
 
-        // Remove all classes from the next slide
-        slides[currentSlide].classList.remove('active', 'leaving');
+        const currentActive = document.querySelector('.carousel-slide.active');
+        const nextSlideIndex = (currentSlide + 1) % slides.length;
+        const nextSlide = slides[nextSlideIndex];
 
-        // Show the current slide after a short delay to allow the leaving animation
+        // Start transition
+        nextSlide.style.transform = 'translateX(100%)';
+        nextSlide.classList.add('active');
+        
+        // Force reflow
+        void nextSlide.offsetWidth;
+        
+        // Fade in next slide
+        nextSlide.style.transform = 'translateX(0)';
+
+        // Fade out current slide
+        currentActive.style.transform = 'translateX(-100%)';
+
         setTimeout(() => {
-            slides[currentSlide].classList.add('active');
-        }, 50);
-
-        // Update project name and color
-        timerElement.innerHTML = `<span class="timer-number">${timer}</span> | <span class="project-name">${projectNames[currentSlide]}</span>`;
-
-        // Move to the next slide
-        currentSlide = (currentSlide + 1) % slides.length;
-
-        // Reset the timer
-        timer = 7;
+            currentActive.classList.remove('active');
+            currentSlide = nextSlideIndex;
+            isTransitioning = false;
+            
+            // Update timer display with new project name
+            timerElement.innerHTML = `<span class="timer-number">7</span> | <span class="project-name">${projectNames[nextSlideIndex]}</span>`;
+        }, 800); // Match CSS transition duration
     }
 
-    // Show the first slide immediately
-    showSlide();
+    // Initialize first slide
+    slides[0].classList.add('active');
+    timerElement.innerHTML = `<span class="timer-number">7</span> | <span class="project-name">${projectNames[0]}</span>`;
 
-    // Auto-rotate every 5 seconds
-    setInterval(showSlide, 5000);
-
-    // Update the timer every second
+    // Single interval for both timer and transitions
     setInterval(() => {
         timer--;
-        // Update only the timer number, keep the project name
-        const timerNumber = timerElement.querySelector('.timer-number');
-        timerNumber.textContent = timer;
+        timerElement.querySelector('.timer-number').textContent = timer;
+
+        if (timer === 0) {
+            showNextSlide();
+            timer = 7;
+        }
     }, 1000);
 
     // Add touch support for carousel
     const carousel = document.querySelector('.carousel');
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
     let touchStartX = 0;
     let touchEndX = 0;
 
     carousel.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
+        resetIntervals(); // Pause auto-rotate during swipe
     });
 
     carousel.addEventListener('touchend', e => {
@@ -74,17 +91,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function handleGesture() {
+        if (isTransitioning) return;
+        resetIntervals();
+        
         if (touchEndX < touchStartX) {
             // Swipe left - next slide
             currentSlide = (currentSlide + 1) % slides.length;
-            showSlide();
         }
         if (touchEndX > touchStartX) {
             // Swipe right - previous slide
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide();
         }
+        showNextSlide();
     }
+
+    // Add keyboard support for accessibility
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showNextSlide();
+        } else if (e.key === 'ArrowRight') {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showNextSlide();
+        }
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
