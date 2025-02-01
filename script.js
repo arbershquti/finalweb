@@ -1,7 +1,8 @@
-let images = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg'];
-let currentImage = 0;
-let header = document.getElementById('hero');
-let lastChangeTime = Date.now();
+// Remove all carousel-related JavaScript
+// let images = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg'];
+// let currentImage = 0;
+// let header = document.getElementById('hero');
+// let lastChangeTime = Date.now();
 
 // Remove or comment out the background image rotation code
 // let backgroundTimeout;
@@ -21,103 +22,31 @@ let lastChangeTime = Date.now();
 // };
 
 document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const timerElement = document.querySelector('.timer');
-    const projectNames = ['House Extension Project', 'House Renovation Project', 'Living Room Project'];
-    let currentSlide = 7;
-    let timer = 7;
-    let isTransitioning = false;
+    // Remove carousel initialization
+    // const slides = document.querySelectorAll('.carousel-slide');
+    // const timerElement = document.querySelector('.timer');
+    // const projectNames = ['House Extension Project', 'House Renovation Project', 'Living Room Project'];
+    // let currentSlide = 7;
+    // let timer = 7;
+    // let isTransitioning = false;
 
-    function showNextSlide() {
-        if (isTransitioning) return;
-        isTransitioning = true;
+    // Remove carousel functions
+    // function showNextSlide() { ... }
+    // function handleGesture() { ... }
 
-        const currentActive = document.querySelector('.carousel-slide.active');
-        const nextSlideIndex = (currentSlide + 1) % slides.length;
-        const nextSlide = slides[nextSlideIndex];
+    // Remove carousel event listeners
+    // const carousel = document.querySelector('.carousel');
+    // const carouselSlides = document.querySelectorAll('.carousel-slide');
+    // let touchStartX = 0;
+    // let touchEndX = 0;
 
-        // Start transition
-        nextSlide.style.transform = 'translateX(100%)';
-        nextSlide.classList.add('active');
-        
-        // Force reflow
-        void nextSlide.offsetWidth;
-        
-        // Fade in next slide
-        nextSlide.style.transform = 'translateX(0)';
+    // carousel.addEventListener('touchstart', e => { ... });
+    // carousel.addEventListener('touchend', e => { ... });
 
-        // Fade out current slide
-        currentActive.style.transform = 'translateX(-100%)';
+    // Remove keyboard support for carousel
+    // document.addEventListener('keydown', (e) => { ... });
 
-        setTimeout(() => {
-            currentActive.classList.remove('active');
-            currentSlide = nextSlideIndex;
-            isTransitioning = false;
-            
-            // Update timer display with new project name
-            timerElement.innerHTML = `<span class="timer-number">7</span> | <span class="project-name">${projectNames[nextSlideIndex]}</span>`;
-        }, 800); // Match CSS transition duration
-    }
-
-    // Initialize first slide
-    slides[0].classList.add('active');
-    timerElement.innerHTML = `<span class="timer-number">7</span> | <span class="project-name">${projectNames[0]}</span>`;
-
-    // Single interval for both timer and transitions
-    setInterval(() => {
-        timer--;
-        timerElement.querySelector('.timer-number').textContent = timer;
-
-        if (timer === 0) {
-            showNextSlide();
-            timer = 7;
-        }
-    }, 1000);
-
-    // Add touch support for carousel
-    const carousel = document.querySelector('.carousel');
-    const carouselSlides = document.querySelectorAll('.carousel-slide');
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carousel.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-        resetIntervals(); // Pause auto-rotate during swipe
-    });
-
-    carousel.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleGesture();
-    });
-
-    function handleGesture() {
-        if (isTransitioning) return;
-        resetIntervals();
-        
-        if (touchEndX < touchStartX) {
-            // Swipe left - next slide
-            currentSlide = (currentSlide + 1) % slides.length;
-        }
-        if (touchEndX > touchStartX) {
-            // Swipe right - previous slide
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        }
-        showNextSlide();
-    }
-
-    // Add keyboard support for accessibility
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showNextSlide();
-        } else if (e.key === 'ArrowRight') {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showNextSlide();
-        }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+    // Keep the rest of the existing code
     const aboutSection = document.querySelector('.about-content');
     
     const observer = new IntersectionObserver((entries) => {
@@ -505,3 +434,34 @@ function getProjectData(projectId) {
     };
     return projects[projectId];
 }
+
+// Manual Carousel Functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Initialize first slide
+showSlide(currentSlide);
+
+// Add 'home' class to body if on home page
+document.addEventListener('DOMContentLoaded', function() {
+    const body = document.body;
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+        body.classList.add('home');
+    }
+});

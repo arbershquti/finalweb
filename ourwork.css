@@ -46,11 +46,12 @@ header {
 }
 
 .logo a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 
 }
 
@@ -77,12 +78,13 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 2;
 } 
+
 
 /* Footer Styles */
 .footer {
