@@ -357,10 +357,7 @@ header::before {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
+        box-shadow: none; /* Remove shadow on mobile */
     }
     
     .logo {
