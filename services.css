@@ -531,4 +531,28 @@ header .nav-menu ul li a {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
+}
+
+/* Mobile-specific styles for the filter button */
+@media (max-width: 768px) {
+    .filter-select {
+        width: 100%; /* Full width on mobile */
+        padding: 12px 20px; /* Slightly smaller padding */
+        font-size: 16px; /* Adjust font size */
+        text-align: center; /* Center the text */
+        background-color: rgba(0, 0, 0, 0.4); /* Slightly darker background */
+    }
+
+    .filter-select-wrapper::after {
+        right: 15px; /* Adjust arrow position */
+        font-size: 18px; /* Slightly smaller arrow */
+    }
+
+    .filter-select:hover {
+        transform: none; /* Remove hover effect on mobile */
+    }
+
+    .filter-select-wrapper:hover::after {
+        transform: translateY(-50%); /* Remove arrow movement on mobile */
+    }
 } 
