@@ -357,14 +357,16 @@ header::before {
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 10px 10px;
-        top: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
     }
     
     .logo {
         margin-right: 0;
-        margin-bottom: 15px;
+        margin-bottom: 0;
+        flex: 0 0 auto;
     }
     
     nav ul {
@@ -488,8 +490,22 @@ header::before {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 0;
+        flex: 0 0 auto;
+    }
+    
     .hamburger {
         display: flex;
+        margin-left: auto;
     }
     
     .nav-menu {
