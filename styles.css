@@ -1579,7 +1579,7 @@ select option:checked {
 /* Add project title button styles */
 .carousel-project-button {
     position: absolute;
-    bottom: 70px;
+    bottom: 75px;
     left: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
