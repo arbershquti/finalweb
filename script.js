@@ -450,13 +450,11 @@ function nextSlide() {
     showSlide(currentSlide);
 }
 
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
-
 // Initialize first slide
 showSlide(currentSlide);
+
+// Add automatic rotation
+setInterval(nextSlide, 5000);
 
 // Add 'home' class to body if on home page
 document.addEventListener('DOMContentLoaded', function() {
