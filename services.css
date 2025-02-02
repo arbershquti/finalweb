@@ -540,7 +540,7 @@ header .nav-menu ul li a {
         padding: 12px 20px; /* Slightly smaller padding */
         font-size: 16px; /* Adjust font size */
         text-align: center; /* Center the text */
-        background-color: rgba(0, 0, 0, 0.4); /* Slightly darker background */
+        background-color: rgba(0, 0, 0, 0.); /* Slightly darker background */
     }
 
     .filter-select-wrapper::after {
